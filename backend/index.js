@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const productRoute = require("./routes/productRoute");
+const authRoute = require("./routes/authRoute");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
@@ -25,6 +26,7 @@ app.use(cors(corsOptions));
 // routes
 // product
 app.use("/api/product", productRoute);
+app.use("/api/auth", authRoute);
 
 const port = process.env.PORT || 8989;
 const dboptions = { useNewUrlParser: true, useUnifiedTopology: true };
